@@ -1,31 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { PokemonDetails } from "./Pokemon.types";
 
 // Esta interfaz representa lo que vamos a recibir por props
 interface Props {
   name: string;
-}
-
-// Esta interfaz trepresenta los datos nesteados del 'tipo' del Pokemon según nos viene del API, dato que después reusamos en la interfaz PokemonDetails
-interface PokemonType {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  };
-}
-
-// Esta omterfaz representa los datos de los 'sprites' del Pokemon según nos viene del API, dato que después reusamos en la interfaz PokemonDetails.
-interface PokemonSprites {
-  front_default: string;
-  back_default: string;
-}
-
-// Esta inerfaz representa los datos del Pokemón que obtenemos
-interface PokemonDetails {
-  name: string;
-  // Esto es una forma de descomponer una interfaz en partes reusables y más legibles aunque se podría declarar todo directamente aquí en PokemonDetails
-  types: PokemonType[];
-  sprites: PokemonSprites;
 }
 
 export const Pokemon: React.FC<Props> = (props) => {
